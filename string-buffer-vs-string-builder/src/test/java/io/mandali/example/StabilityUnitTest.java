@@ -3,14 +3,23 @@ package io.mandali.example;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
 
+import io.tubrux.ConfigTubrux;
+import io.tubrux.TestTubrux;
+
+@ConfigTubrux(showDate = true)
 public class StabilityUnitTest {
+
+    static {
+        new TestTubrux(StabilityUnitTest.class).start();
+    }
 
     void append(Appendable appendable, String string) {
         try {
             appendable.append(string);
         } catch (Exception e) {
             System.out.println("Exception caught: " + e.getMessage());
-            System.out.println(appendable.getClass().getTypeName());
+            System.out.println(appendable.getClass()
+                .getTypeName());
         }
     }
 
@@ -79,4 +88,9 @@ public class StabilityUnitTest {
         System.out.println("sharedBuffer.length():" + sharedBuffer.length() + (sharedBuffer.length() != 3000 ? "❌" : ""));
         Assertions.assertEquals(3000, sharedBuffer.length());
     }
+
+    //    @Test
+    //    void aftertest(){
+    //        new TestTubrux(this).start();
+    //    }
 }

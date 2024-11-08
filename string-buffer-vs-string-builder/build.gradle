@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '2.0.20'
+    id 'java'
 }
 
 group = 'io.mandali.example'
@@ -12,13 +12,9 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-
     implementation 'io.tubrux:tubrux:0.0.1-SNAPSHOT' // Please
 }
 
 test {
     useJUnitPlatform()
-}
-kotlin {
-    jvmToolchain(21)
 }

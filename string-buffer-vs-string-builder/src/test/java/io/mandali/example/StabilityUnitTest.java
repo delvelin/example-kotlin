@@ -6,8 +6,11 @@ import org.junit.jupiter.api.RepeatedTest;
 import io.tubrux.ConfigTubrux;
 import io.tubrux.TestTubrux;
 
-@ConfigTubrux(showDate = true)
+@ConfigTubrux(showDate = true, detectSensitiveData = true, ignoreCommentBlock = true)
 public class StabilityUnitTest {
+
+    String apikey = "";
+//    String token = "JHbjhgug44^%$%$6";
 
     static {
         new TestTubrux(StabilityUnitTest.class).start();

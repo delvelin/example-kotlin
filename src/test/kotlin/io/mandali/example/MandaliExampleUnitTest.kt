@@ -1,8 +1,5 @@
 package io.mandali.example
 
-import io.tubrux.ConfigTubrux
-import io.tubrux.TestTubrux
-import io.tubrux.Tubrux
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
 import java.lang.Thread.sleep
@@ -32,12 +29,7 @@ class Account(val name: String, var balance: Int) {
     }
 }
 
-@ConfigTubrux(showDate = true, detectDeadlock = true)
 class MandaliExampleUnitTest {
-
-    init {
-        TestTubrux(this).start() // here can't detect deadlock
-    }
 
     @Test
     fun `example of deadlock`() {
@@ -80,8 +72,8 @@ class MandaliExampleUnitTest {
         threads.forEach { it.join() }
     }
 
-    @AfterEach
-    fun `analyze thread`() {
-        TestTubrux(this).start() // deadlock detection can run here
+    @Test
+    fun `vulnerability test`() {
+
     }
 }

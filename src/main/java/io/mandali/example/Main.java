@@ -1,6 +1,5 @@
 package io.mandali.example;
 
-import io.tubrux.Tubrux;
 
 public class Main {
 
@@ -8,8 +7,8 @@ public class Main {
         String apikey = "";
         //        String token = "iOiAiSldUIn0.eyJzdWIiOiAiMTIzNDU2Nzg5MC";
 
-        new Tubrux().setShowDate(true)
-            .setDetectSensitiveData(true)
-            .scan();
+//        new Tubrux().setShowDate(true)
+//            .setDetectSensitiveData(true)
+//            .scan();
     }
 }

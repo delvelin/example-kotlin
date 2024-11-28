@@ -1,19 +1,22 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '2.0.20'
+    id 'io.github.hangga.delvelin' version '0.0.19-beta'
 }
 
 group = 'io.mandali.example'
 
 repositories {
     mavenCentral()
-    maven{url 'https://repo.repsy.io/mvn/hangga/repo'}
+    maven { url 'https://repo.repsy.io/mvn/hangga/repo' }
 }
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 
-    implementation 'io.tubrux:tubrux:0.0.2-SNAPSHOT' // Please
+    implementation('com.google.guava:guava:31.1-jre')
+//    implementation('org.hibernate.orm:hibernate-core:7.0.0.Beta1')
+    implementation('org.apache.logging.log4j:log4j-core:2.0-beta9')
 }
 
 test {
@@ -21,4 +24,8 @@ test {
 }
 kotlin {
     jvmToolchain(11)
+}
+
+delvelin {
+    outputFileFormat = 'HTML'
 }

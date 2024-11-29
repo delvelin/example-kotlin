@@ -17,6 +17,12 @@ dependencies {
     implementation('com.google.guava:guava:31.1-jre')
 //    implementation('org.hibernate.orm:hibernate-core:7.0.0.Beta1')
     implementation('org.apache.logging.log4j:log4j-core:2.0-beta9')
+//    implementation 'io.github.hangga.delvelin:io.github.hangga.delvelin.gradle.plugin:0.0.19-beta'
+//    implementation 'io.github.hangga.delvelin:delvelin:0.0.19-beta'
+//    implementation 'io.github.hangga:delvelin-plugin:0.0.19-beta1'
+    implementation 'io.github.hangga:delvelin-plugin:0.0.19-beta1'
+    implementation 'io.github.hangga:delvelin:0.0.19-beta1'
+//    testImplementation 'io.github.hangga:delvelin:0.0.19-beta1'
 }
 
 test {

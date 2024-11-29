@@ -1,6 +1,8 @@
 package io.mandali.example
 
-import org.junit.jupiter.api.AfterEach
+import io.github.hangga.delvelin.Delvelin
+import io.github.hangga.delvelin.LogListener
+import io.github.hangga.delvelin.properties.OutputFileFormat
 import org.junit.jupiter.api.Test
 import java.lang.Thread.sleep
 import kotlin.concurrent.thread
@@ -74,6 +76,21 @@ class MandaliExampleUnitTest {
 
     @Test
     fun `vulnerability test`() {
+        Delvelin()
+            .setOutputFormat(OutputFileFormat.HTML)
+            .setAllowedExtensions(".java")
+            .setShowSaveDialog(true)
+            .scan()
+    }
 
+    @Test
+    fun `test with custom listener`() {
+        Delvelin().setLogListener(object : LogListener {
+            override fun onGetLog(s: String) {
+            }
+
+            override fun onGetLog(stringBuffer: StringBuffer) {
+            }
+        }).scan()
     }
 }

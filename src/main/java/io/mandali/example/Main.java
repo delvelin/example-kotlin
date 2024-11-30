@@ -1,7 +1,7 @@
 package io.mandali.example;
-
-import io.github.hangga.delvelin.Delvelin;
-import io.github.hangga.delvelin.properties.OutputFileFormat;
+//
+//import io.github.hangga.delvelin.Delvelin;
+//import io.github.hangga.delvelin.properties.OutputFileFormat;
 
 public class Main {
 
@@ -12,6 +12,6 @@ public class Main {
 //        new Tubrux().setShowDate(true)
 //            .setDetectSensitiveData(true)
 //            .scan();
-        new Delvelin().setOutputFormat(OutputFileFormat.HTML).scan();
+//        new Delvelin().setOutputFormat(OutputFileFormat.HTML).scan();
     }
 }

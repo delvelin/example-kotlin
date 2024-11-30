@@ -78,8 +78,8 @@ class MandaliExampleUnitTest {
     fun `vulnerability test`() {
         Delvelin()
             .setOutputFormat(OutputFileFormat.HTML)
-            .setAllowedExtensions(".java")
-            .setShowSaveDialog(true)
+//            .setAllowedExtensions(".java")
+//            .setShowSaveDialog(true)
             .scan()
     }
 

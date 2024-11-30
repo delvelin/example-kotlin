@@ -20,9 +20,8 @@ dependencies {
 //    implementation 'io.github.hangga.delvelin:io.github.hangga.delvelin.gradle.plugin:0.0.19-beta'
 //    implementation 'io.github.hangga.delvelin:delvelin:0.0.19-beta'
 //    implementation 'io.github.hangga:delvelin-plugin:0.0.19-beta1'
-    implementation 'io.github.hangga:delvelin-plugin:0.0.19-beta1'
-    implementation 'io.github.hangga:delvelin:0.0.19-beta1'
-//    testImplementation 'io.github.hangga:delvelin:0.0.19-beta1'
+    testImplementation('io.github.hangga:delvelin-plugin:0.0.20-beta')
+//    implementation 'io.github.hangga:delvelin:0.0.20-beta'
 }
 
 test {

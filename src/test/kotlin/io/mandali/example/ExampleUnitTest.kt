@@ -78,13 +78,16 @@ class MandaliExampleUnitTest {
     fun `vulnerability test`() {
         Delvelin()
             .setOutputFormat(OutputFileFormat.HTML)
-//            .setAllowedExtensions(".java")
-//            .setShowSaveDialog(true)
+            .setAutoLaunchBrowser(true) // for HTML format
+//            .setAllowedExtensions(".java") // by default we allow .java, .kt, .gradle, .kts and .xml.
+            .setShowSaveDialog(true) // for HTML & JSON format
+            .setShowDate(true) // for LOG format
             .scan()
     }
 
     @Test
-    fun `test with custom listener`() {
+    fun `vulnerability with custom listener for android`() {
+        // On Android, using `System.out.print` is discouraged; instead, use logging methods to capture and display logs in Logcat.
         Delvelin().setLogListener(object : LogListener {
             override fun onGetLog(s: String) {
             }

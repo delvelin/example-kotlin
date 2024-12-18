@@ -78,10 +78,10 @@ class MandaliExampleUnitTest {
     fun `vulnerability test`() {
         Delvelin()
             .setOutputFormat(OutputFileFormat.HTML)
-            .setAutoLaunchBrowser(true) // for HTML format
+            .setAutoLaunchBrowser(true) // auto open browser for HTML format
 //            .setAllowedExtensions(".java") // by default we allow .java, .kt, .gradle, .kts and .xml.
             .setShowSaveDialog(true) // for HTML & JSON format
-            .setShowDate(true) // for LOG format
+            .setShowDate(true) // for Console LOG format
             .scan()
     }
 

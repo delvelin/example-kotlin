@@ -2,19 +2,15 @@ package io.mandali.example;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.Test;
 
-import io.tubrux.ConfigTubrux;
-import io.tubrux.TestTubrux;
+import io.github.hangga.delvelin.Delvelin;
+import io.github.hangga.delvelin.properties.OutputFileFormat;
 
-@ConfigTubrux(showDate = true, detectSensitiveData = true, ignoreCommentBlock = true)
 public class StabilityUnitTest {
 
     String apikey = "";
 //    String token = "JHbjhgug44^%$%$6";
-
-    static {
-        new TestTubrux(StabilityUnitTest.class).start();
-    }
 
     void append(Appendable appendable, String string) {
         try {
@@ -92,8 +88,12 @@ public class StabilityUnitTest {
         Assertions.assertEquals(3000, sharedBuffer.length());
     }
 
-    //    @Test
-    //    void aftertest(){
-    //        new TestTubrux(this).start();
-    //    }
+    @Test
+    void vulnerabilityTest(){
+        new Delvelin()
+            .setOutputFormat(OutputFileFormat.HTML)
+            .setAutoLaunchBrowser(true) // auto open browser for HTML format
+            .setShowDate(true) // for Console LOG format
+            .scan();
+    }
 }
